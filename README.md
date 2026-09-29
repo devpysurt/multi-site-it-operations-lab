@@ -4,6 +4,8 @@ A practical PowerShell portfolio project for supporting Windows workstations acr
 
 **Version:** 0.1.0 · **Runtime:** PowerShell 7.4+ · **License:** MIT
 
+**CI status:** Windows and Ubuntu checks passed on 2026-09-29. See [workflow runs](https://github.com/devpysurt/multi-site-it-operations-lab/actions/workflows/ci.yml) and the [verification record](docs/verification.md).
+
 > Fictional training environment. This project is not affiliated with Samherji or any other employer. All sample people, devices and operational details are invented.
 
 [Start in Russian](docs/START-HERE.ru.md) · [Setup](docs/setup.md) · [Architecture](docs/architecture.md) · [Test plan](docs/test-plan.md) · [Verification status](docs/verification.md)
@@ -91,7 +93,7 @@ Install-Module Pester -RequiredVersion 5.7.1 -Scope CurrentUser
 ./scripts/Invoke-Tests.ps1 -IncludeWindows
 ```
 
-Tests exercise validation, HTML escaping, thresholds, report file output, provisioning idempotency, WhatIf and WinGet error classification. Package processes are mocked in automated tests; CI never installs the example apps. A GitHub Actions workflow is included for Windows and Linux. It has not run on GitHub yet.
+Tests exercise validation, HTML escaping, thresholds, report file output, provisioning idempotency, WhatIf and WinGet error classification. Package processes are mocked in automated tests; CI never installs the example apps. The GitHub Actions workflow completed successfully on Windows and Ubuntu on 2026-09-29. A subsequent run after updating the workflow actions also completed successfully. CI success does not replace manual workstation acceptance: real WinGet installation, elevation behavior and browser layout checks remain pending. See the [verification record](docs/verification.md) for evidence and limits.
 
 ## Repository map
 
