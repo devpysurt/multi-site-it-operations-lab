@@ -1,0 +1,41 @@
+name: PowerShell checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    name: Test on ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install test dependency
+        run: Install-Module Pester -RequiredVersion 5.7.1 -Scope CurrentUser -Force -SkipPublisherCheck
+      - name: Parse scripts and validate module
+        run: ./scripts/Test-Syntax.ps1
+      - name: Unit tests and Windows collection test
+        run: ./scripts/Invoke-Tests.ps1 -IncludeWindows
+      - name: Demo smoke test
+        run: |
+          ./scripts/Get-WorkstationReport.ps1 -Demo
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          ./scripts/Test-AssetInventory.ps1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          ./scripts/Initialize-Workstation.ps1 -InstallPackages -WhatIf
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-${{ matrix.os }}
+          path: test-results/
+          if-no-files-found: warn
