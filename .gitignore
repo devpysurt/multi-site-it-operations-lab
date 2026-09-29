@@ -1,0 +1,23 @@
+# Live output can contain workstation or employee information.
+/reports/
+/logs/
+/workstation/
+/test-results/
+/TestResults.xml
+/coverage.xml
+/config/*.local.json
+/data/*.local.csv
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.key
+*.pem
+*.cer
+*.log
+*.zip
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
