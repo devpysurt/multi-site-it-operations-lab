@@ -1,0 +1,7 @@
+AssetId,DeviceName,SerialNumber,Site,AssignedTo,Status
+LAB-001,LAB-REY-001,DEMO-SN-001,Reykjanes,alex@example.invalid,Assigned
+LAB-002,LAB-REY-002,DEMO-SN-002,Reykjanes,,InStock
+LAB-003,LAB-AKU-001,DEMO-SN-003,Akureyri,robin@example.invalid,Assigned
+LAB-004,LAB-AKU-002,DEMO-SN-004,Akureyri,,Repair
+LAB-005,LAB-DAL-001,DEMO-SN-005,Dalvik,sam@example.invalid,Assigned
+LAB-006,LAB-DAL-002,DEMO-SN-006,Dalvik,,Retired

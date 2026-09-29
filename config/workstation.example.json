@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "directories": ["Support", "Handover", "Support/Reports"],
+  "packages": [
+    {"id": "Microsoft.VisualStudioCode"},
+    {"id": "7zip.7zip"}
+  ]
+}

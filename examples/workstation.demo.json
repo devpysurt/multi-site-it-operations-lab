@@ -1,0 +1,22 @@
+{
+  "SchemaVersion": 1,
+  "IsDemo": true,
+  "CollectedAtUtc": "2026-09-29T09:00:00Z",
+  "ComputerName": "LAB-REY-001",
+  "OperatingSystem": {
+    "Caption": "Windows 11 Enterprise (fictional demo)",
+    "Version": "10.0",
+    "LastBootUtc": "2026-09-28T07:30:00Z"
+  },
+  "MemoryGB": 16,
+  "Disks": [
+    {"Name": "C:", "SizeGB": 256, "FreeGB": 82},
+    {"Name": "D:", "SizeGB": 500, "FreeGB": 40}
+  ],
+  "NetworkAdapters": [{"Name": "Ethernet", "Status": "Connected"}],
+  "Services": [
+    {"Name": "Spooler", "Status": "Running"},
+    {"Name": "wuauserv", "Status": "Stopped"}
+  ],
+  "CollectionErrors": []
+}
